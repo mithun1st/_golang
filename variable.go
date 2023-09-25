@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"unicode/utf8"
 )
 
 func main() {
@@ -10,13 +11,17 @@ func main() {
 
 	var isMale bool = true
 	var num int = -94 //default 64
+	var chh rune = 'M'
 	var str string = "MH Mithun"
 	var pi float64 = 3.1416
 	var guest uint = 3 //default 64
 	var rgb byte = 255
 
+	const myConst string = "this is const value"
+
 	fmt.Println(isMale)
 	fmt.Println(num)
+	fmt.Println(chh)
 	fmt.Println(str)
 	fmt.Println(pi)
 	fmt.Println(guest)
@@ -27,6 +32,8 @@ func main() {
 		isMale, num, str, pi, guest, rgb)
 	fmt.Printf("bool: %T, int: %T, string: %T, float: %T, unit: %T, byte: %T \n",
 		isMale, num, str, pi, guest, rgb)
+	fmt.Println(myConst)
+	fmt.Println(utf8.RuneCountInString("len of the string"))
 
 	//dynamic assign
 	var1 := 255
@@ -51,7 +58,8 @@ func main() {
 	var pi1 float32 = 1.0
 
 	var guest1 uint8 = 255
-	var guest2 uint32 = 1000000000
+	var guest2 uint16 = 10000
+	var guest3 uint32 = 1000000000
 
 	fmt.Println(num1)
 	fmt.Println(num2)
@@ -59,4 +67,5 @@ func main() {
 	fmt.Println(pi1)
 	fmt.Println(guest1)
 	fmt.Println(guest2)
+	fmt.Println(guest3)
 }

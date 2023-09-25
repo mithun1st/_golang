@@ -25,4 +25,17 @@ func main() {
 		fmt.Println("OR Operation")
 	}
 
+	//switch
+	var value int = 4
+	switch value {
+	case 1:
+		fmt.Println("a")
+		break
+	case 4:
+		fmt.Println("b")
+		break
+	default:
+		fmt.Println("c")
+		break
+	}
 }
