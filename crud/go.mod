@@ -1,4 +1,4 @@
-module example.com/crud_exaple
+module example.com/crud
 
 go 1.21.1
 
