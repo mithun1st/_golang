@@ -8,6 +8,7 @@ import (
 func fnc() {
 	fmt.Println("Hi There...")
 }
+
 func calculate(x int, y int) (int, int) {
 	var sum int = x + y
 	var mul int = x * y
