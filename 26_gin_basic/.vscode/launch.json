@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Debugging",
+            "name": "Development",
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "main.go"
+            "program": "./cmd/server/dev/main.go"
         },
-        // {
-        //     "name": "Launch Production",
-        //     "type": "go",
-        //     "request": "launch",
-        //     "mode": "debug",
-        //     "program": "main1.go"
-        // }
+        {
+            "name": "Production",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "./cmd/server/prod/main.go"
+        }
     ]
 }

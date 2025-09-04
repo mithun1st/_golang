@@ -10,12 +10,12 @@ type Student struct {
 // * Method
 func (s Student) infoWithOutPointer(depName string) string {
 	s.roll = -1
-	return "Name: " + s.name + "\nDepartment: " + depName
+	return "Name: " + s.name + "\tDepartment: " + depName
 }
 
 func (s *Student) infoWithPointer(depName string) string {
 	s.roll = -1
-	return "Name: " + s.name + "\nDepartment: " + depName
+	return "Name: " + s.name + "\tDepartment: " + depName
 }
 
 func main() {
@@ -73,11 +73,9 @@ func main() {
 		{102 stu2}
 		{CSE 152.4 {Mr x 4.5}}
 		{201 Mh Mithun}
-		Name: Mh Mithun
-		Department: EEE
+		Name: Mh Mithun	Department: EEE
 		{201 Mh Mithun}
-		Name: Mh Mithun
-		Department: EEE
+		Name: Mh Mithun	Department: EEE
 		{-1 Mh Mithun}
 	*/
 }

@@ -36,6 +36,7 @@ type Car struct {
 }
 
 // * Methods
+// - getName
 func (f Food) getName() string {
 	return f.foodName
 }
@@ -46,7 +47,7 @@ func (c Car) getName() string {
 	return c.brandName
 }
 
-// --
+// - totalPrice
 func (f Food) totalPrice() float32 {
 	return f.foodPrice + f.serviceCharge
 }
@@ -57,7 +58,7 @@ func (c Car) totalPrice() float32 {
 	return c.price + c.vat
 }
 
-// --
+// - makingTime
 func (f Food) makingTime() int {
 	return f.coockingTime
 }
@@ -80,7 +81,7 @@ func itemsExpense(items []InfoI) ([]string, float32) {
 	return names, totalCost
 }
 
-func restaurentWaitingTimeFor(item TimeI, nameInfo InfoI) {
+func restaurentWaitingTimeAndName(item TimeI, nameInfo InfoI) {
 	fmt.Println(item.makingTime(), "minute, for:", nameInfo.getName())
 }
 
@@ -115,18 +116,28 @@ func main() {
 	fmt.Println(totalExpese)
 	//
 
-	restaurentWaitingTimeFor(food1, food1)
-	restaurentWaitingTimeFor(juice1, juice1)
+	restaurentWaitingTimeAndName(food1, food1)
+	restaurentWaitingTimeAndName(juice1, juice1)
 	// restaurentWaitingTimeFor(car1, car1)
 
 	//* Type Assertions
 	var data interface{} = "Mahadi Hassan"
 	value := data.(string)
 	fmt.Println(value)
+
 	value1, ok1 := data.(string)
 	fmt.Println(ok1, value1)
 	value2, ok2 := data.(int)
 	fmt.Println(ok2, value2)
+
+	switch data.(type) {
+	case int:
+		fmt.Printf("type int, value: %d\n", data)
+	case string:
+		fmt.Printf("type string, value: %s\n", data)
+	default:
+		fmt.Printf("Unknown type: %T\n", data)
+	}
 
 	/*
 		Burger - Cost: 280
@@ -139,6 +150,7 @@ func main() {
 		Mahadi Hassan
 		true Mahadi Hassan
 		false 0
+		type string, value: Mahadi Hassan
 	*/
 
 }

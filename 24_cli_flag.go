@@ -5,8 +5,6 @@ import (
 	"fmt"
 )
 
-//* go run 24_building_cli.go -nameK=Mithun -ageK=1994 -sexK=true
-
 func main() {
 
 	var name string
@@ -24,7 +22,9 @@ func main() {
 	fmt.Println("Name:", name, "Age:", age, "isMale:", isMale)
 	fmt.Println(*data)
 
+	//$ go run 24_cli_flag.go -nameK=Mithun -ageK=1994 -sexK=true
 	/*
 		Name: Mithun Age: 1994 isMale: true
+		b
 	*/
 }

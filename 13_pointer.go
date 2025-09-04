@@ -25,10 +25,19 @@ func main() {
 	setZeroWithPointer(&value2)
 	fmt.Println(value2)
 
+	//* convert (value to pointer & pointer to value)
+	var value int = 100
+	var pointer *int = &value
+	var newValue int = (*pointer) + 1
+	fmt.Println(newValue)
+
 	/*
 		10
 		10
+
 		20
 		0
+
+		101
 	*/
 }

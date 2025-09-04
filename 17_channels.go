@@ -38,7 +38,7 @@ func main() {
 	fmt.Println(resultB1)
 	fmt.Println(resultB2)
 
-	// data can be insert again after channel being empty
+	// Data can be insert again after channel being empty
 
 	ch2 <- "ping reinsert 1"
 	ch2 <- "ping reinsert 2"
@@ -66,7 +66,6 @@ func main() {
 	var chReceiver chan string = make(chan string, 1)
 
 	chSender <- "ping passing"
-	chReceiver <- <-chSender
 
 	go func(s chan string, r chan string) {
 		var data string = <-s
@@ -75,4 +74,17 @@ func main() {
 
 	fmt.Println(<-chReceiver)
 	time.Sleep(time.Second)
+
+	/*
+		ping A1
+		ping A2
+		ping A3
+		0xc000076070
+		ping B1
+		ping B2
+		ping reinsert 1
+		ping reinsert 2
+		ping reinsert 3
+		ping passing
+	*/
 }
